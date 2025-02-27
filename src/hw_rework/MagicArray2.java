@@ -1,19 +1,26 @@
-package Lesson22;
+package hw_rework;
 
 import java.util.Arrays;
 
-public class MagicArray {
+public class MagicArray2 {
     int[] array;
     int cursor; // по умолчанию = 0
 
     // Методы, расширяющие функционал массива
 
-     MagicArray() {
+     MagicArray2() {
         this.array = new int[10]; // [0, 0...0]
     }
 
-    MagicArray (int[] array) {
+    MagicArray2(int[] array) {
         //  Todo Homework
+        if (array == null|| array.length == 0) {
+            this.array = new int[10];
+        }else {
+            this.array = new int[array.length * 2];
+            // (int...numbers) может принять ссылку на массив int[]
+            add(array);
+        }
     }
 
     // Добавление в массив одного элемента
@@ -65,6 +72,13 @@ public class MagicArray {
         for (int i = 0; i < numbers.length; i++) {
             add(numbers[i]);
         }
+    }
+    public int[] toArray() {
+         int[] result = new int[cursor];
+         for (int i = 0; i < cursor; i++) {
+             result[i] = array[i];
+         }
+         return result;
     }
 
 
@@ -155,18 +169,37 @@ public class MagicArray {
     // {1, 100, 5, 100, 24, 0, 100} -> lastIndexOf(100) -> 6
     int lastIndexOf(int value) {
         // Todo Homework
+        for (int i = cursor - 1; i >= 0; i--) {
+            if (array[i] == value) {
+                return i;
+            }
+        }
         return -1;
+
+
+       /* int index = -1;
+        for (int i = 0; i < cursor; i++) {
+            if (array[i] == value) {
+                index = i;
+            }
+        }
+        return index;
+
+        */
+
+
+
     }
 
     // Удаление элемента по значению
     boolean removeByValue(int value) {
-         if (value >= 0 && value < cursor) {
-             int index = indexOf(value);
-         }
-
-
         // Todo Homework
-        return false;
+        int index = indexOf(value);
+        if (index < 0) return false;
+        remove(index);
+        return true;
+
+
     }
 
     //  // {1, 100, 5, 100, 24, 0, 100}

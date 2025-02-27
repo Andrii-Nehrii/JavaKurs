@@ -1,12 +1,40 @@
-package Lesson22;
+package hw_rework;
 
 
+import hw_rework.MagicArray2;
 
+import java.util.Arrays;
 
-public class Les22Main {
+public class Les22Main2 {
     public static void main(String[] args) {
 
-        int[] numbers = new int[5];
+        int[] test = {1,2,3,4,5};
+        MagicArray2 magic = new MagicArray2(test);
+        magic.test();
+        magic.add(10);
+        magic.test();
+
+        System.out.println(magic.toString());
+        test [3] = 1000;
+        magic.add(20,30,40);
+        magic.test();
+
+        System.out.println(magic.toString());
+
+        int[] fromMagik = magic.toArray();
+        System.out.println(fromMagik.length);
+        System.out.println("Масив: "+ Arrays.toString(fromMagik));
+
+
+        System.out.println(magic.removeByValue(30));
+        System.out.println(magic.removeByValue(1000));
+        System.out.println(magic.removeByValue(-2147483647));
+        magic.test();
+
+
+
+
+      /*  int[] numbers = new int[5];
         System.out.println("В numbers ячеек: " + numbers.length);
 
         // [1, 3,  5, 4, 100]
@@ -62,6 +90,8 @@ public class Les22Main {
         magic.removeByValue(5);
         System.out.println(magic.toString());
 
+
+       */
 
     }
 }
