@@ -32,5 +32,6 @@ public class ArrayEncapsTest {public static void main(String[] args) {
     System.out.println(magic.toString());
 
 
+
 }
 }
