@@ -8,5 +8,7 @@ public class CalkulatorMain {
         System.out.println(Calkulator.division(4 , 0));
         System.out.println(Calkulator.division(4 , 2));
         System.out.println(Calkulator.multiplication(2 ,10));
+        System.out.println(Calkulator.calculateCircumference(3));
+        System.out.println(Calkulator.calkulateCiercleArea(3));
     }
 }
