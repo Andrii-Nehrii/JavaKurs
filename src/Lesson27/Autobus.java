@@ -25,12 +25,21 @@ public class Autobus {
 
     @Override
     public String toString() {
+       /* StringBuilder sb = new StringBuilder("Autobus: { id: ");
+        sb.append(id).append(" ; capacity: ").append(capacity).append(" ; ").append(driver.toString());
+        sb.append(" ; ").append(autopilot.toString()).append(" ; pasangers: ").append(countPassanger);
+        sb.append(" }");
+        return sb.toString() ;
+
+        */
         return "Autobus{" +
                 "id=" + id +
                 ", driver=" + driver.toString() +
                 ", autopilot=" + autopilot.toString() +
                 ", capacity=" + capacity +
                 '}';
+
+
     }
     public void showListPassangers(){
 
@@ -51,7 +60,7 @@ public class Autobus {
     public boolean takePassanger(Passenger passenger){
         if (passenger == null)return  false;
         if (countPassanger < capacity){
-            if (isPassangerInBus(passenger)){
+            if (isPassangerInBus(passenger) >= 0){
                 System.out.printf("Пассажир с id %d уже в автобусе с id %d\n",
                         passenger.getId() , this.id );
                 return false;
@@ -66,15 +75,40 @@ public class Autobus {
         System.out.println("Мест нет");
         return false;
     }
-    private  boolean isPassangerInBus(Passenger passenger){
+    private  int isPassangerInBus(Passenger passenger){
         for (int i = 0; i < countPassanger; i++) {
             if(passengers[i].getId() == passenger.getId()){
-                return true;
+                return i;
             }
 
         }
-        return false;
+        return -1;
     }
+
+    public boolean dropPassanger(Passenger passenger){
+        if (passenger == null || countPassanger == 0) return  false;
+        int index = isPassangerInBus(passenger);
+
+        if (index == -1){
+            System.out.printf("Пассажир с id %d не в атобусе (%d) не найден!\n" , passenger.getId() , this.id );
+            return false;
+        }
+
+        for (int i = 0; i < countPassanger; i++) {
+            passengers[i] = passengers[i+1];
+
+
+        }
+        passengers[countPassanger - 1] = null;
+
+        countPassanger--;
+        System.out.printf("Пассажир (%d) dsitk bp fdnj,ecf %d" , passenger.getId() , this.id );
+        return true;
+
+    }
+
+
+
 
 
     public int getId() {
@@ -101,3 +135,4 @@ public class Autobus {
         this.driver = driver;
     }
 }
+//https://forms.gle/HkicwdBcVeyzjSHZA

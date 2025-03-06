@@ -19,6 +19,10 @@ Passenger john = new Passenger("John");
 
         System.out.println(bus.getCountPassanger());
         bus.showListPassangers();
+        bus.toString();
+
+
+
 
 
 
