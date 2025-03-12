@@ -3,10 +3,7 @@ import lists.MyArrayList;
 
 import java.util.Arrays;
 
-/**
- * @author Sergey Bugaenko
- * {@code @date} 12.03.2025
- */
+
 
 public class ArrayTest {
 

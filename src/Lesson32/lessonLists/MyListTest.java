@@ -2,10 +2,7 @@ package Lesson32.lessonLists;
 import lists.MyArrayList;
 import lists.MyList;
 
-/**
- * @author Sergey Bugaenko
- * {@code @date} 12.03.2025
- */
+
 
 public class MyListTest {
 

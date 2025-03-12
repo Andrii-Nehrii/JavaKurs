@@ -4,11 +4,6 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Objects;
 
-/**
- * @author Sergey Bugaenko
- * {@code @date} 11.03.2025
- */
-
 public class MyArrayList<T> implements MyList<T> {
     private T[] array;
     private int cursor; // по умолчанию = 0
