@@ -2,9 +2,12 @@ package lists;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Objects;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
-public class MyArrayList<T> implements MyList<T> {
+public class MyArrayList<T> implements MyList<T>  {
     private T[] array;
     private int cursor; // по умолчанию = 0
 
@@ -264,7 +267,37 @@ public class MyArrayList<T> implements MyList<T> {
         System.out.println(Arrays.toString(array));
     }
 
+   /* @Override
+    public void forEach(Consumer<? super T> action) {
+        Iterable.super.forEach(action);
+    }
+
+    @Override
+    public Spliterator<T> spliterator() {
+        return Iterable.super.spliterator();
+    }
+
+    */
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyIterator();
+    }
+    private class MyIterator implements Iterator<T>{
+        int currentIndex = 0;
+
+        @Override
+        public T next() {
+            return array[currentIndex++];
+        }
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < cursor;
+        }
+    }
 }
+
 // [5, 20]
 
 /*
