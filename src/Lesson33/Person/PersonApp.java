@@ -18,7 +18,14 @@ public class PersonApp {
         System.out.println(person);
         person.setPassword("Aiy1aaaa1");// спецсимвол
         System.out.println(person);
+        person.setEmail("test@ma1.1il.net");
+        System.out.println(person);
+
+        person.setPassword("QWE4RTYqwwe%");
+        System.out.println(person);
+
     }
+
 
 
 }
