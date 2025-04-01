@@ -1,4 +1,4 @@
-package Lesson46.homework2;
+package Lesson46.homework.homework2;
 
 public class LibraryMain {
     public static void main(String[] args) {
