@@ -3,7 +3,7 @@ package Lesson42;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Comporator {
+public class MyComporator {
     public static void main(String[] args) {
         int[] ints = new int[]{9, 5, 1, 2, 4, 11, 0};
         Arrays.sort(ints);
