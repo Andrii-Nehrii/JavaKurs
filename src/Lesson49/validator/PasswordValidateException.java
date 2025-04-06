@@ -1,6 +1,6 @@
 package Lesson49.validator;
 
-public class PasswordValidateException extends RuntimeException {
+public class PasswordValidateException extends Exception {
 
 
 

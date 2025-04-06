@@ -57,7 +57,7 @@ public class PersonValidator {
         // Все проверки пройдены. Email подходит
 
     }
-    public static void validatePassword(String password) throws EmailValidateException{
+    public static void validatePassword(String password) throws PasswordValidateException{
 
             if (password == null || password.length() < 8) throw new PasswordValidateException("password should be not null and <8 ");
 
