@@ -1,4 +1,4 @@
-package Lesson33.Person;
+package Lesson33.Person;//package Lesson33.Person;
 
 public class PersonApp {
     public static void main(String[] args) {
