@@ -21,6 +21,8 @@ public class PersonApp {
         person.setEmail("test@ma1.1il.net");
         System.out.println(person);
         person.setPassword("Andriy2_-2");
+        person.setEmail("111111");
+
 
       //  person.setPassword("QWE4RTYqwwe%");
         System.out.println(person);
